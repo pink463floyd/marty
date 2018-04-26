@@ -1,0 +1,46 @@
+#banner {
+    background-color: red;
+    width:100%;
+    height:100px;
+  }
+  
+  #left {
+    //float: left;
+  }
+  
+  #right {
+       margin: 0 0 0 66%;
+       //border-style: solid;
+  }
+  
+  
+  #menu {
+    background-color: green;
+    width:66%;
+    height:50px;
+    float: left;
+  }
+  
+  #content {
+    background-color: orange;
+    width:66%;
+    height:300px;
+    float:left;
+  }
+  
+  .advert1 {
+    background-color: yellow;
+    height:175px;
+  }
+  
+  .advert2{
+    background-color: brown;
+    height:175px;
+  }
+  #footer {
+    background-color: black;
+    width:100%;
+    height:50px;
+    clear:both;
+  }
+  

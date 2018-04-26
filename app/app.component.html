@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <!-- <link rel="stylesheet" href="./app.component.css"> -->
+</head>
+<body>
+        <div id="banner">
+          <h2>BANNER </h2>
+        </div>
+        <div id="left">
+          <div id="menu"> 
+           <!--  <h3>MENU</h3> -->
+            <nav>
+              <a routerLink="/departments">Departments</a>
+              <a routerLink="/metrics">Metrics</a>
+            </nav>
+          </div>
+          <div id="content">
+            <h3>ACTUAL CONTENT GOES HERE</h3> 
+                 <router-outlet></router-outlet>
+
+          </div>
+        </div>
+        <div id="right">
+          <div class="advert1">$$$ </div>
+          <div class="advert2"> $$$</div>
+        </div>
+        <div id="footer"> MY LEFT FOOT</div>
+</body>
+
+</html>
