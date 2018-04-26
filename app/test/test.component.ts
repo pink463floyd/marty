@@ -6,14 +6,19 @@ import {MlbRepoService} from '../mlb-repo.service';
 @Component({
   selector: 'app-test',
   template: `
-    <p>
-    </p>
     <div *ngFor="let standing of standings">
        <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
-       {{standing.Team}}. {{standing.W}} - {{standing.L}}
+       <pre>     {{standing.Team}}           {{standing.W}}      {{standing.L}}</pre>
     </div>
-
-
+    <table>
+    <tr *ngFor="let standing of standings">
+       <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
+       <td style="width:25px;border-style:solid"></td>
+       <td style="font-family:monospace; width:25px; text-align:right;border-style:solid">{{standing.Team}}  </td>
+       <td style="font-family:monospace; width:100px; text-align:right;border-style:solid">{{standing.W}} </td>
+       <td style="height:25px; font-family:monospace; width:50px; text-align:right;border-style:solid">{{standing.L}}</td>
+    </tr>
+    </table>
   `,
   styles: []
 })
