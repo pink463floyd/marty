@@ -23,28 +23,7 @@ import {MlbRepoService} from '../mlb-repo.service';
       </tr>
     </table>
   `,
-  styles: [`
-      td {
-        border:0px solid black; //Set to 1 for visual debug
-        height:25px;
-        font-family:monospace;
-        text-align:right;
-        font-size: 15px;
-      }
-      th {
-        border:0px solid black;  //Set to 1 for visual debu
-        font-family:monospace;
-        text-align:right;
-        font-size: 15px;
-      }
-      table {
-        border:0px solid black;  //Set to 1 for visual debu
-        display:block;
-        margin-left: auto;
-        //margin-left:20px;
-        margin-right: auto;
-      }
-  `]
+  styleUrls:['../app.component.css']
 })
 export class TestComponent implements OnInit {
   public standings = [];

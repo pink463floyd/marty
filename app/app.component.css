@@ -5,12 +5,12 @@
   }
   
   #left {
-    //float: left;
+    margin: 0 0 0 ;
   }
   
   #right {
        margin: 0 0 0 66%;
-       //border-style: solid;
+       /* border-style: solid; */
   }
   
   
@@ -44,3 +44,23 @@
     clear:both;
   }
   
+  td {
+    border:0px solid black;
+    height:25px;
+    font-family:monospace;
+    text-align:right;
+    font-size: 15px;
+  }
+  th {
+    border:0px solid black; 
+    font-family:monospace;
+    text-align:right;
+    font-size: 15px;
+  }
+  table {
+    width:230px;
+    border:0px solid black;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
