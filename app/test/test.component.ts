@@ -7,19 +7,29 @@ import {MlbRepoService} from '../mlb-repo.service';
   selector: 'app-test',
   template: `
     <table>
-    <tr *ngFor="let standing of standings">
-       <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
-       <td style="width:25px;  "></td>
-       <td style="width:25px;  ">{{standing.Team}}  </td>
-       <td style="width:100px; ">{{standing.W}} </td>
-       <td style="width:50px;  ">{{standing.L}}</td>
-    </tr>
+      <tr> 
+        <th></th>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+      </tr>
+      <tr *ngFor="let standing of standings">
+         <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
+         <td style="width:50px;  ">{{standing.Team}}  </td>
+        <td style="width:100px; ">{{standing.W}} </td>
+        <td style="width:50px;  ">{{standing.L}}</td>
+      </tr>
     </table>
   `,
   styles: [`
       td {
         border:0px solid black;
         height:25px;
+        font-family:monospace;
+        text-align:right;
+      }
+      th {
+        border:0px solid black;
         font-family:monospace;
         text-align:right;
       }
