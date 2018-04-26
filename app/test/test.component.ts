@@ -14,8 +14,10 @@ import {MlbRepoService} from '../mlb-repo.service';
         <th>L</th>
       </tr>
       <tr *ngFor="let standing of standings">
-         <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
-         <td style="width:50px;  ">{{standing.Team}}  </td>
+         <td> 
+          <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
+         </td>
+         <td style="width:30px;  ">{{standing.Team}}  </td>
         <td style="width:100px; ">{{standing.W}} </td>
         <td style="width:50px;  ">{{standing.L}}</td>
       </tr>
@@ -23,15 +25,24 @@ import {MlbRepoService} from '../mlb-repo.service';
   `,
   styles: [`
       td {
-        border:0px solid black;
+        border:0px solid black; //Set to 1 for visual debug
         height:25px;
         font-family:monospace;
         text-align:right;
+        font-size: 15px;
       }
       th {
-        border:0px solid black;
+        border:0px solid black;  //Set to 1 for visual debu
         font-family:monospace;
         text-align:right;
+        font-size: 15px;
+      }
+      table {
+        border:0px solid black;  //Set to 1 for visual debu
+        display:block;
+        margin-left: auto;
+        //margin-left:20px;
+        margin-right: auto;
       }
   `]
 })
