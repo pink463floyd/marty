@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 
 @Component({
@@ -17,5 +17,8 @@ export class AppComponent {
   ];
   onSelect(division)  {
     console.log(division.menu)
+    this.router.navigate(["/departments",division.menu])
   }
+
+  constructor(private router: Router) {}
 }
