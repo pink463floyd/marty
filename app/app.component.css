@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, monospace;
+}
+
 #banner {
     background-color: red;
     width:100%;
@@ -10,7 +14,6 @@
   
   #right {
        margin: 0 0 0 66%;
-       /* border-style: solid; */
   }
   
   
@@ -45,22 +48,59 @@
   }
   
   td {
-    border:0px solid black;
     height:25px;
     font-family:monospace;
     text-align:right;
     font-size: 15px;
   }
   th {
-    border:px solid black; 
     font-family:monospace;
     text-align:right;
     font-size: 15px;
   }
   table {
     width:430px;
-    border:0px solid black;
     display:block;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+.menu-items {
+  list-style-type:none;
+  padding-left:0;
+
+
+}
+
+.menu-item {
+  float:left;
+  padding: 5px 5px; 
+  cursor: pointer; /* Pointer/hand icon */
+  color: white; /* White text */
+  text-decoration: underline;
+}

@@ -8,24 +8,30 @@
           <h2>BANNER </h2>
         </div>
         <div id="left">
-          <div id="menu"> 
-           <!--  <h3>MENU</h3> -->
-            <nav>
-              <a routerLink="/departments">Departments</a>
-              <a routerLink="/metrics">Metrics</a>
-            </nav>
-          </div>
-          <div id="content">
+          <div id="menu" style="overflow:visible"> 
+            <!-- <h2>menu</h2> -->
+            <ul class="menu-items">
+                <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
+                  {{division.menu}} 
+                </li>
+          </ul>
+        </div>
+        <div id="content">
             <h3 style="text-align:center">AL: East</h3> 
-                 <router-outlet></router-outlet>
-
-          </div>
+                <router-outlet></router-outlet>
+        </div>
         </div>
         <div id="right">
           <div class="advert1">$$$ </div>
           <div class="advert2"> $$$</div>
         </div>
-        <div id="footer"> MY LEFT FOOT</div>
+        <div id="footer"> MY LEFT FOOT
+            <div class="btn-group">
+                <button>Apple</button>
+                <button>Samsung</button>
+                <button>Sony</button>
+              </div>
+        </div>
 </body>
 
 </html>

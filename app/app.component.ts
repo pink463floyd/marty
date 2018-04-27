@@ -9,4 +9,13 @@ import { RouterModule, Routes } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
+
+  divisions = [
+    {"menu":"AL-East", "league":"AL", "division":"EAST"},
+    {"menu":"AL-Central", "league":"AL", "division":"CENT"},
+    {"menu":"AL-West", "league":"AL", "division":"WEST"},
+  ];
+  onSelect(division)  {
+    console.log(division.menu)
+  }
 }
