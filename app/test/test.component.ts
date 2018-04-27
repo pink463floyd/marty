@@ -18,14 +18,14 @@ import {MlbRepoService} from '../mlb-repo.service';
 
       </tr>
       <tr *ngFor="let standing of standings">
-         <td> 
+        <td> 
           <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
-         </td>
-         <td style="width:80px;  ">{{standing.Team}}  </td>
+        </td>
+        <td style="width:50px;  ">{{standing.Team}}  </td>
         <td style="width:150px; ">{{standing.W}} </td>
-        <td style="width:100px;  ">{{standing.L}}</td>
-        <td style="width:200px;  ">{{standing.PCT}}</td>
-        <td style="width:200px;  ">{{standing.GB}}</td>
+        <td style="width:100px; ">{{standing.L}}</td>
+        <td style="width:200px; ">{{standing.PCT}}</td>
+        <td style="width:200px; ">{{standing.GB}}</td>
 
       </tr>
     </table>
