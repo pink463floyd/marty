@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MlbRepoService} from '../mlb-repo.service';
+import {ActivatedRoute} from '@angular/router';
 //https://www.dropbox.com/sh/0sankm6febsfogp/AAB1p-aVJnoReeclPZdv6jYua/Raw%20Icons%20-%20AL?dl=0
 //http://resizeimage.net/
 
@@ -35,10 +36,14 @@ import {MlbRepoService} from '../mlb-repo.service';
 export class TestComponent implements OnInit {
   public standings = [];
 
-  constructor(private _MlbRepoService: MlbRepoService) { }
+  constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.standings = this._MlbRepoService.getStandings();
+    console.log("scott in")
+    console.log(parseInt(this.route.snapshot.paramMap.get('id')));
+    console.log("scott out")
+
   }
 
 }
