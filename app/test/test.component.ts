@@ -42,7 +42,7 @@ export class TestComponent implements OnInit {
     this.standings = this._MlbRepoService.getStandings();
     console.log("scott in")
     console.log((this.route.snapshot.paramMap.get('id')));
-    console.log(parseInt(this.route.snapshot.paramMap.get('date')));
+    console.log((this.route.snapshot.paramMap.get('date')));
     console.log("scott out")
 
   }

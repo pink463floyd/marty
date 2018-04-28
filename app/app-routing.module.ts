@@ -7,7 +7,7 @@ import {Test2Component} from './test2/test2.component';
 const routes: Routes = [
   { path: '', redirectTo: '/metrics', pathMatch: 'full'},
   { path: 'subscriptions', component: Test2Component },
-  { path: 'subscriptions/:id', component: TestComponent },
+  { path: 'subscriptions/:id/:date', component: TestComponent },
   { path: 'metrics', component: Test2Component},
   { path: '**', component: Test2Component }
 
