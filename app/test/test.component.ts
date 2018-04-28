@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MlbRepoService} from '../mlb-repo.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 //https://www.dropbox.com/sh/0sankm6febsfogp/AAB1p-aVJnoReeclPZdv6jYua/Raw%20Icons%20-%20AL?dl=0
 //http://resizeimage.net/
 
@@ -8,6 +8,8 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-test',
   template: `
+    {{param1}}
+    {{param2}}
     <table>
       <tr> 
         <th></th>
@@ -35,6 +37,9 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class TestComponent implements OnInit {
   public standings = [];
+  private param1;
+  private param2;
+
 
   constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { }
 
@@ -43,7 +48,16 @@ export class TestComponent implements OnInit {
     console.log("scott in")
     console.log((this.route.snapshot.paramMap.get('id')));
     console.log((this.route.snapshot.paramMap.get('date')));
-    console.log("scott out")
+    console.log("scott out");
+    //this.param = this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe((params:ParamMap) => {
+      let id = params.get('id');
+      let date = params.get('date');
+      this.param1 = id;
+      this.param2 = date;
+
+
+    });
 
   }
 
