@@ -6,7 +6,7 @@
 <body>
         <div id="banner">
           <h2>BANNER </h2>
-          <app-date></app-date>
+          <app-date (childEvent)="message=$event"></app-date>
         </div>
         <div id="left">
           <div id="menu" style="overflow:visible"> 
@@ -31,7 +31,10 @@
 
             </nav>
           </div>
-          <div class="advert2"> $$$</div>
+          <div class="advert2"> 
+            $$$
+            {{message}}
+          </div>
         </div>
         <div id="footer"> MY LEFT FOOT
             <div class="btn-group">

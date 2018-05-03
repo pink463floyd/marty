@@ -9,6 +9,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
+  public message = "scott";
 
   divisions = [
     {"menu":"AL-East", "league":"AL", "division":"EAST"},

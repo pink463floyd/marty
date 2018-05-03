@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -17,6 +17,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DateComponent implements OnInit {
   date: Date = new Date();
+  @Output() public childEvent = new EventEmitter();
 
   constructor() { }
 
@@ -25,6 +26,7 @@ export class DateComponent implements OnInit {
 
   updateCalcs(event){
     console.log(event);
+    this.childEvent.emit("awesome!");
   }
   
 }
