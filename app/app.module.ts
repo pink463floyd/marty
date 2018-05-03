@@ -11,6 +11,7 @@ import { DateComponent} from './date/date.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
   ],
   imports: [
    BrowserModule,
+   FormsModule,
    AppRoutingModule,
    BrowserAnimationsModule,
    MatDatepickerModule, MatNativeDateModule, MatInputModule,
