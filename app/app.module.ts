@@ -9,7 +9,7 @@ import { Test2Component } from './test2/test2.component';
 import { MlbRepoService} from './mlb-repo.service'
 import { DateComponent} from './date/date.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatInputModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
@@ -24,7 +24,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
    BrowserModule,
    AppRoutingModule,
    BrowserAnimationsModule,
-   MatDatepickerModule, MatNativeDateModule,
+   MatDatepickerModule, MatNativeDateModule, MatInputModule,
    MatFormFieldModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule
   ],
   providers: [MlbRepoService],
