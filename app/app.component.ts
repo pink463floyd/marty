@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
+import {DateUtilitiesService} from './date-utilities.service'
 
 
 @Component({
@@ -12,15 +13,11 @@ export class AppComponent {
   title : String;
   filterDate : any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dateUtil: DateUtilitiesService) {
     console.log("App Component: Constructor")
     this.title = 'app';
-
-    let tmpDate = new Date();
-    tmpDate.setDate(tmpDate.getDate()-1);
-    this.filterDate = tmpDate.getFullYear() + "-";
-    this.filterDate += tmpDate.getMonth()+1 + "-";
-    this.filterDate += tmpDate.getDate();
+    
+    this.filterDate = this.dateUtil.getYesterday();
   }
 
   ngOnInit() {
