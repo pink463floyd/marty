@@ -32,7 +32,12 @@ export class AppComponent {
     this.router.navigate(["/subscriptions",division.menu,this.message])
   }
 
+  ngOnInit() {
+    console.log("App Component: ngOnInit")
+
+  }
   constructor(private router: Router) {
+    console.log("App Component: Constructor")
     this.date2 = new Date();
     this.date2.setDate(this.date2.getDate()-1);
     this.message = this.date2.getFullYear() + "-";
