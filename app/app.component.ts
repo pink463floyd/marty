@@ -9,7 +9,11 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-  public message = "scott";
+  date2 : Date;
+  message = "scott";
+  //public message = new Date();
+
+
 
   divisions = [
     {"menu":"AL-East", "league":"AL", "division":"EAST"},
@@ -18,8 +22,21 @@ export class AppComponent {
   ];
   onSelect(division)  {
     console.log(division.menu)
+    console.log(this.message)
+    let date2: Date = new Date();
+    date2.setDate(date2.getDate()-1);
+    let dateString = date2.getFullYear() + "-";
+    dateString += date2.getMonth()+1 + "-";
+    dateString += date2.getDate();
+
     this.router.navigate(["/subscriptions",division.menu,this.message])
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.date2 = new Date();
+    this.date2.setDate(this.date2.getDate()-1);
+    this.message = this.date2.getFullYear() + "-";
+    this.message += this.date2.getMonth()+1 + "-";
+    this.message += this.date2.getDate();
+  }
 }

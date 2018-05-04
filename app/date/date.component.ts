@@ -26,7 +26,7 @@ export class DateComponent implements OnInit {
   }
 
   updateCalcs(event){
-    let date2: Date = new Date();
+    let date2: Date;
     date2 = event.value;
     let dateString = date2.getFullYear() + "-";
     dateString += date2.getMonth()+1 + "-";
