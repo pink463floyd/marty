@@ -8,12 +8,9 @@ import { RouterModule, Routes, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title : String;
   date2 : Date;
-  filterDate = "scott";
-  //public filterDate = new Date();
-
-
+  filterDate : any;
 
   divisions = [
     {"menu":"AL-East", "league":"AL", "division":"EAST"},
@@ -44,5 +41,6 @@ export class AppComponent {
     this.filterDate = this.date2.getFullYear() + "-";
     this.filterDate += this.date2.getMonth()+1 + "-";
     this.filterDate += this.date2.getDate();
+    this.title = 'app';
   }
 }
