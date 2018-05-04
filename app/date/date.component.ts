@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   template: `
     <p>
        <mat-form-field>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="date"  (dateChange)="updateCalcs($event)" placeholder="Choose a date">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="date"  (dateChange)="updateCalcs($event)" placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
       </mat-form-field> 
@@ -16,12 +16,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styles: []
 })
 export class DateComponent implements OnInit {
-  date: Date = new Date();
+  date: Date;
   @Output() public childEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.date= new Date();
+    this.date.setDate(this.date.getDate()-1);
   }
 
   updateCalcs(event){
