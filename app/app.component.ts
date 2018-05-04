@@ -18,7 +18,7 @@ export class AppComponent {
   ];
   onSelect(division)  {
     console.log(division.menu)
-    this.router.navigate(["/subscriptions",division.menu,division.menu])
+    this.router.navigate(["/subscriptions",division.menu,this.message])
   }
 
   constructor(private router: Router) {}

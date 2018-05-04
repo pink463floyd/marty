@@ -25,8 +25,16 @@ export class DateComponent implements OnInit {
   }
 
   updateCalcs(event){
-    console.log(event);
-    this.childEvent.emit("awesome!");
+    let date2: Date = new Date();
+    date2 = event.value;
+    let dateString = date2.getFullYear() + "-";
+    dateString += date2.getMonth()+1 + "-";
+    dateString += date2.getDate();
+    console.log(event.value);
+    console.log(date2.getFullYear());
+    console.log(date2.getMonth()+1);
+    console.log(date2.getDate());
+    this.childEvent.emit(dateString);
   }
   
 }
