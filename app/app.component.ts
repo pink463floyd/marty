@@ -23,6 +23,11 @@ export class AppComponent {
     this.filterDate += tmpDate.getDate();
   }
 
+  ngOnInit() {
+    console.log("App Component: ngOnInit")
+    this.router.navigate(["/subscriptions", this.divisions[0].menu,this.filterDate])
+  }
+
   divisions = [
     {"menu":"AL-East", "league":"AL", "division":"EAST"},
     {"menu":"AL-Central", "league":"AL", "division":"CENT"},
@@ -34,9 +39,5 @@ export class AppComponent {
     console.log(division.menu)
     console.log(this.filterDate)
     this.router.navigate(["/subscriptions",division.menu,this.filterDate])
-  }
-
-  ngOnInit() {
-    console.log("App Component: ngOnInit")
   }
 }
