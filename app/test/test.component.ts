@@ -21,7 +21,7 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
         <th>GB</th>
 
       </tr>
-      <tr *ngFor="let standing of standings | filter:'2018-4-27'">
+      <tr *ngFor="let standing of standings | filter:(param2)">
         <td> 
           <img *ngIf="true" src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
         </td>
