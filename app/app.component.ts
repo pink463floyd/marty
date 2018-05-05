@@ -16,12 +16,11 @@ export class AppComponent {
   constructor(private router: Router, private dateUtil: DateUtilitiesService) {
     console.log("App Component: Constructor")
     this.title = 'app';
-    
-    this.filterDate = this.dateUtil.getYesterday();
+    this.filterDate = this.dateUtil.getYesterdayString();
   }
 
   ngOnInit() {
-    console.log("App Component: ngOnInit")
+    console.log("App Component: ngOnInit -- About to Navigate to /subscriptions" + this.filterDate)
     this.router.navigate(["/subscriptions", this.divisions[0].menu,this.filterDate])
   }
 

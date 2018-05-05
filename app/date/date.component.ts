@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {DateUtilitiesService} from '../date-utilities.service'
 
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   template: `
     <p>
        <mat-form-field>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="date"  (dateChange)="updateCalcs($event)" placeholder="">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
       </mat-form-field> 
@@ -15,27 +16,21 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styles: []
 })
 export class DateComponent implements OnInit {
-  date: Date;
+  myDateObject: Date;
   @Output() public childEvent = new EventEmitter();
 
-  constructor() { }
+  constructor(private dateUtil: DateUtilitiesService) { }
 
   ngOnInit() {
-    this.date= new Date();
-    this.date.setDate(this.date.getDate()-1);
+    //Note that "myDate" is presented in the DatePicker Component's HTML
+    this.myDateObject=this.dateUtil.getYesterdayObject();
+    console.log("Date.component: ngOnInit" + this.myDateObject)
   }
 
-  updateCalcs(event){
-    let date2: Date;
-    date2 = event.value;
-    let dateString = date2.getFullYear() + "-";
-    dateString += date2.getMonth()+1 + "-";
-    dateString += date2.getDate();
-    console.log(event.value);
-    console.log(date2.getFullYear());
-    console.log(date2.getMonth()+1);
-    console.log(date2.getDate());
+  sendEvent(event){ 
+    let dateString = this.dateUtil.dateObject2String(event.value);
     this.childEvent.emit(dateString);
+    console.log("Date.component: sendEvent" + dateString);
   }
   
 }

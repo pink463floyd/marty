@@ -41,22 +41,20 @@ export class TestComponent implements OnInit {
   private param2;
 
 
-  constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { }
+  constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { 
+     console.log("testComponent: Constructor");
+  }
 
   ngOnInit() {
+    console.log("testComponent: ngOnInit");
     this.standings = this._MlbRepoService.getStandings();
-    console.log("scott in")
     console.log((this.route.snapshot.paramMap.get('id')));
     console.log((this.route.snapshot.paramMap.get('date')));
-    console.log("scott out");
-    //this.param = this.route.snapshot.paramMap.get('id');
     this.route.paramMap.subscribe((params:ParamMap) => {
       let id = params.get('id');
       let date = params.get('date');
       this.param1 = id;
       this.param2 = date;
-
-
     });
 
   }

@@ -6,13 +6,29 @@ export class DateUtilitiesService {
 
   constructor() { }
 
-  public getYesterday() {
+  public getYesterdayString() {
     let tmpDate = new Date();
-    let returnDate;
     tmpDate.setDate(tmpDate.getDate()-1);
-    returnDate = tmpDate.getFullYear() + "-";
+    let returnDate = tmpDate.getFullYear() + "-";
     returnDate += tmpDate.getMonth()+1 + "-";
     returnDate += tmpDate.getDate();
     return returnDate;
+  }
+
+  public getYesterdayObject() {
+    let date= new Date();
+    date.setDate(date.getDate()-1);
+    return date;
+  }
+  
+  public dateObject2String(date: Date) : string {
+    let dateString = date.getFullYear() + "-";
+    dateString += date.getMonth()+1 + "-";
+    dateString += date.getDate();
+    console.log(date);
+    console.log(date.getFullYear());
+    console.log(date.getMonth()+1);
+    console.log(date.getDate());
+    return dateString;
   }
 }
