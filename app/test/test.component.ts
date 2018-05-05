@@ -22,13 +22,13 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
       </tr>
       <tr *ngFor="let standing of standings">
         <td> 
-          <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
+          <img *ngIf="standing.Date == param2" src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
         </td>
-        <td style="width:50px;  ">{{standing.Team}}  </td>
-        <td style="width:150px; ">{{standing.W}} </td>
-        <td style="width:100px; ">{{standing.L}}</td>
-        <td style="width:200px; ">{{standing.PCT}}</td>
-        <td style="width:200px; ">{{standing.GB}}</td>
+        <td *ngIf="standing.Date == param2" style="width:50px;  ">{{standing.Team}}  </td>
+        <td *ngIf="standing.Date == param2" style="width:150px; ">{{standing.W}} </td>
+        <td *ngIf="standing.Date == param2" style="width:100px; ">{{standing.L}}</td>
+        <td *ngIf="standing.Date == param2" style="width:200px; ">{{standing.PCT}}</td>
+        <td *ngIf="standing.Date == param2" style="width:200px; ">{{standing.GB}}</td>
 
       </tr>
     </table>

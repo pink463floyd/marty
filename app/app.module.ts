@@ -13,6 +13,7 @@ import { MatInputModule, MatFormFieldModule, MatNativeDateModule, MatButtonModul
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import {DateUtilitiesService} from './date-utilities.service'
+import { FilterPipe} from './filter.pipe';
 
 
 
