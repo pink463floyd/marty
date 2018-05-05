@@ -6,7 +6,7 @@
 <body>
         <div id="banner">
           <h2>BANNER </h2>
-          <app-date (childEvent)="dateFilterString=$event"></app-date>
+          <app-date (childEvent)="childEvent($event)"></app-date>
           {{dateFilterString}}
         </div>
         <div id="left">

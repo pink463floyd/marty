@@ -12,16 +12,18 @@ import {DateUtilitiesService} from './date-utilities.service'
 export class AppComponent {
   title : String;
   dateFilterString : any;
+  currentTeam: String;
 
   constructor(private router: Router, private dateUtil: DateUtilitiesService) {
     console.log("App Component: Constructor")
     this.title = 'app';
+    this.currentTeam = this.divisions[0].menu,this.dateFilterString;
     this.dateFilterString = this.dateUtil.getYesterdayString();
   }
 
   ngOnInit() {
     console.log("App Component: ngOnInit -- About to Navigate to /subscriptions" + this.dateFilterString)
-    this.router.navigate(["/subscriptions", this.divisions[0].menu,this.dateFilterString])
+    this.router.navigate(["/subscriptions", this.currentTeam, this.dateFilterString])
   }
 
   divisions = [
@@ -34,6 +36,14 @@ export class AppComponent {
     console.log("App Component: onSelect")
     console.log(division.menu)
     console.log(this.dateFilterString)
-    this.router.navigate(["/subscriptions",division.menu,this.dateFilterString])
+    this.currentTeam = division.menu;
+    this.router.navigate(["/subscriptions", this.currentTeam,this.dateFilterString])
+  }
+
+  childEvent(dateString){
+    console.log("so cool")
+    console.log(dateString)
+    this.dateFilterString = dateString;
+    this.router.navigate(["/subscriptions", this.currentTeam,this.dateFilterString])
   }
 }
