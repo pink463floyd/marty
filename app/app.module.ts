@@ -22,7 +22,8 @@ import { FilterPipe} from './filter.pipe';
     AppComponent,
     TestComponent,
     Test2Component,
-    DateComponent
+    DateComponent,
+    FilterPipe
   ],
   imports: [
    BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MlbRepoService} from '../mlb-repo.service';
 import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
+
 //https://www.dropbox.com/sh/0sankm6febsfogp/AAB1p-aVJnoReeclPZdv6jYua/Raw%20Icons%20-%20AL?dl=0
 //http://resizeimage.net/
 
@@ -20,15 +21,15 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
         <th>GB</th>
 
       </tr>
-      <tr *ngFor="let standing of standings">
+      <tr *ngFor="let standing of standings | filter:'param2'">
         <td> 
-          <img *ngIf="standing.Date == param2" src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
+          <img *ngIf="true" src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
         </td>
-        <td *ngIf="standing.Date == param2" style="width:50px;  ">{{standing.Team}}  </td>
-        <td *ngIf="standing.Date == param2" style="width:150px; ">{{standing.W}} </td>
-        <td *ngIf="standing.Date == param2" style="width:100px; ">{{standing.L}}</td>
-        <td *ngIf="standing.Date == param2" style="width:200px; ">{{standing.PCT}}</td>
-        <td *ngIf="standing.Date == param2" style="width:200px; ">{{standing.GB}}</td>
+        <td *ngIf="true" style="width:50px;  ">{{standing.Team}}  </td>
+        <td *ngIf="true" style="width:150px; ">{{standing.W}} </td>
+        <td *ngIf="true" style="width:100px; ">{{standing.L}}</td>
+        <td *ngIf="true" style="width:200px; ">{{standing.PCT}}</td>
+        <td *ngIf="true" style="width:200px; ">{{standing.GB}}</td>
 
       </tr>
     </table>
