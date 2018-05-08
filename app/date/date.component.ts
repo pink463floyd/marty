@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {DateUtilitiesService} from '../date-utilities.service'
-
+import {ViewEncapsulation} from '@angular/core'
 
 @Component({
   selector: 'app-date',
@@ -13,7 +13,26 @@ import {DateUtilitiesService} from '../date-utilities.service'
       </mat-form-field> 
     </p>
   `,
-  styles: []
+  styles: [
+    `
+    .mat-form-field-wrapper {
+      padding-bottom: 10.25em;
+    }
+  
+    .mat-form-field {
+      float: left;
+    }
+
+    /* Clear floats (clearfix hack) */
+    .mat-form-field:after {
+      content: "";
+      clear: both;
+      display: table;
+      border: 1px solid red;
+
+    }
+    `
+  ]
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;

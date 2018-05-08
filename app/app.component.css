@@ -1,5 +1,11 @@
 
 
+  /* Great debugging tool!*/
+  div {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+}
+
 body {
   font-family: Arial, monospace;
 }
@@ -11,26 +17,33 @@ body {
   }
   
   #left {
+    content: "";
+    clear: both;
+    display: table;
+    
     margin: 0 0 0 ;
+    width:60%;
+    float:left;
   }
   
   #right {
        margin: 0 0 0 66%;
+       /* float:right; */
   }
   
   
   #menu {
     background-color: green;
-    width:66%;
+    /*width:66%;*/
     height:50px;
-    float: left;
+    /*float: left; */
   }
   
   #content {
     background-color: orange;
-    width:66%;
+    /* width:66%; */
     height:300px;
-    float:left;
+    /* float:left; */
   }
   
   .advert1 {
@@ -96,13 +109,18 @@ body {
   list-style-type:none;
   padding-left:0;
 
-
 }
 
 .menu-item {
-  float:left;
+  /* float:left; */
+  display: inline;
   padding: 5px 5px; 
   cursor: pointer; /* Pointer/hand icon */
   color: white; /* White text */
   text-decoration: underline;
 }
+
+.date-picker {
+  display:inline;
+}
+

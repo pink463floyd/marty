@@ -4,16 +4,16 @@
    <!-- <link rel="stylesheet" href="./app.component.css"> -->
 </head>
 <body>
-        <div id="banner">
-          <h2>BANNER </h2>
-          <div class="date-picker">
-              <button>+</button>
+        <div id="banner"   style="border: 3px solid #4CAF50;padding: 5px;">
+          <!-- <h2>BANNER </h2> -->
+          <div class="date-picker" style="border: 3px solid rgba(175, 116, 76, 0.932);padding: 5px;">
+              <button style="border: 3px solid red;padding: 5px;">+</button>
               <app-date (childEvent)="childEvent($event)"></app-date>
               <button>-</button>
           </div>
         </div>
-        <div id="left">
-          <div id="menu" style="overflow:visible"> 
+        <div id="left" style="border: 3px solid black;padding: 5px;">
+          <div id="menu" style="overflow:visible; border: 3px solid yellow;padding: 5px;"> 
             <!-- <h2>menu</h2> -->
             <ul class="menu-items">
                 <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
@@ -26,7 +26,7 @@
                 <router-outlet></router-outlet>
         </div>
         </div>
-        <div id="right">
+        <div id="right" style="border: 3px solid black;padding: 5px;">
           <div class="advert1">
             $$$ 
             <nav>
