@@ -6,8 +6,11 @@
 <body>
         <div id="banner">
           <h2>BANNER </h2>
-          <app-date (childEvent)="childEvent($event)"></app-date>
-          {{dateFilterString}}
+          <div class="date-picker">
+              <button>+</button>
+              <app-date (childEvent)="childEvent($event)"></app-date>
+              <button>-</button>
+          </div>
         </div>
         <div id="left">
           <div id="menu" style="overflow:visible"> 
