@@ -1,19 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-   <!-- <link rel="stylesheet" href="./app.component.css"> -->
 </head>
 <body>
-        <div id="banner"   style="border: 3px solid #4CAF50;padding: 5px;">
+        <div id="banner">
           <!-- <h2>BANNER </h2> -->
-          <div class="date-picker" style="border: 3px solid rgba(175, 116, 76, 0.932);padding: 5px;">
-              <button style="border: 3px solid red;padding: 5px;">+</button>
+          <div class="date-picker" style="border: 3px solid purple ;padding: 5px;">
+              <button>+</button>
               <app-date (childEvent)="childEvent($event)"></app-date>
               <button>-</button>
           </div>
         </div>
-        <div id="left" style="border: 3px solid black;padding: 5px;">
-          <div id="menu" style="overflow:visible; border: 3px solid yellow;padding: 5px;"> 
+        <div id="left">
+          <div id="menu"> 
             <!-- <h2>menu</h2> -->
             <ul class="menu-items">
                 <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
@@ -22,11 +21,11 @@
           </ul>
         </div>
         <div id="content">
-            <h3 style="text-align:center">AL: East</h3> 
+            <h3>AL: XXXX</h3> 
                 <router-outlet></router-outlet>
         </div>
         </div>
-        <div id="right" style="border: 3px solid black;padding: 5px;">
+        <div id="right">
           <div class="advert1">
             $$$ 
             <nav>
@@ -39,9 +38,6 @@
           </div>
         </div>
         <div id="footer"> MY LEFT FOOT
-            <div class="btn-group">
-            </div>
         </div>
 </body>
-
 </html>

@@ -16,7 +16,7 @@ import {ViewEncapsulation} from '@angular/core'
   styles: [
     `
     .mat-form-field-wrapper {
-      padding-bottom: 10.25em;
+      padding-bottom: 0.25em;
     }
   
     .mat-form-field {
@@ -29,7 +29,6 @@ import {ViewEncapsulation} from '@angular/core'
       clear: both;
       display: table;
       border: 1px solid red;
-
     }
     `
   ]

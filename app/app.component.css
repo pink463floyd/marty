@@ -1,126 +1,86 @@
-
-
-  /* Great debugging tool!*/
-  div {
+/* Great debugging tool!*/
+div {
   border: 3px solid #4CAF50;
   padding: 5px;
+  overflow:visible;
 }
 
 body {
   font-family: Arial, monospace;
 }
 
+td {
+  height:25px;
+  font-family:monospace;
+  text-align:right;
+  font-size: 15px;
+}
+th {
+  font-family:monospace;
+  text-align:right;
+  font-size: 15px;
+}
+table {
+  width:430px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #banner {
     background-color: red;
     width:100%;
     height:100px;
-  }
-  
-  #left {
-    content: "";
-    clear: both;
-    display: table;
-    
-    margin: 0 0 0 ;
-    width:60%;
-    float:left;
-  }
-  
-  #right {
-       margin: 0 0 0 66%;
-       /* float:right; */
-  }
-  
-  
-  #menu {
-    background-color: green;
-    /*width:66%;*/
-    height:50px;
-    /*float: left; */
-  }
-  
-  #content {
-    background-color: orange;
-    /* width:66%; */
-    height:300px;
-    /* float:left; */
-  }
-  
-  .advert1 {
-    background-color: yellow;
-    height:175px;
-  }
-  
-  .advert2{
-    background-color: brown;
-    height:175px;
-  }
-  #footer {
-    background-color: black;
-    width:100%;
-    height:50px;
-    clear:both;
-  }
-  
-  td {
-    height:25px;
-    font-family:monospace;
-    text-align:right;
-    font-size: 15px;
-  }
-  th {
-    font-family:monospace;
-    text-align:right;
-    font-size: 15px;
-  }
-  table {
-    width:430px;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
 }
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
+  
+#left {
+  content: "";
+  clear: both;
+  display: table;
+  width:60%;
+  float:left;
 }
-
-.btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-    background-color: #3e8e41;
+  
+#menu {
+  background-color: green;
+  height:50px;
 }
 
 .menu-items {
   list-style-type:none;
   padding-left:0;
-
 }
 
 .menu-item {
-  /* float:left; */
   display: inline;
   padding: 5px 5px; 
   cursor: pointer; /* Pointer/hand icon */
   color: white; /* White text */
   text-decoration: underline;
 }
-
-.date-picker {
-  display:inline;
+  
+#content {
+  background-color: orange;
+  height:300px;
+}
+  
+#right {
+  margin: 0 0 0 66%;
+}  
+.advert1 {
+  background-color: yellow;
+  height:175px;
 }
 
+.advert2{
+  background-color: brown;
+  height:175px;
+}
+  
+#footer {
+  background-color: black;
+  width:100%;
+  height:50px;
+  clear:both;
+  color: white; /* White text */
+}
