@@ -21,6 +21,8 @@ import {ViewEncapsulation} from '@angular/core'
   
     .mat-form-field {
       float: left;
+      /*bottom: 16px; */
+      /* left: 10px; */
     }
 
     /* Clear floats (clearfix hack) */
