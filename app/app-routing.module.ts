@@ -4,7 +4,7 @@ import {TestComponent} from './test/test.component';
 import {Test2Component} from './test2/test2.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/metrics', pathMatch: 'full'},
   { path: 'subscriptions', component: Test2Component },
   { path: 'subscriptions/:id/:date', component: TestComponent },
