@@ -9,7 +9,7 @@ import {DateUtilitiesService} from './date-utilities.service'
 import {routes} from './app-routing.module'
 import {TestComponent} from './test/test.component'
 import {Test2Component} from './test2/test2.component'
-
+import { FilterPipe} from './filter.pipe';
 
 class RouterStub {
   navigateByUrl(url: string) {
@@ -20,7 +20,7 @@ class RouterStub {
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, DateComponent, TestComponent, Test2Component],
+      declarations: [AppComponent, DateComponent, TestComponent, Test2Component, FilterPipe],
       providers : [DateUtilitiesService,
         {provide: Router, useClass: RouterStub}
       ],
