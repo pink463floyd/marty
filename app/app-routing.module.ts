@@ -18,4 +18,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
+
+
+//+  declarations: [/* Test2Component */],
+//+  imports: [/* RouterModule.forRoot(routes) */],
+//+  exports: [RouterModule, routes /* routes */],
+
 export class AppRoutingModule { }
