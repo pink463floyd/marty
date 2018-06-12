@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
 import {DateUtilitiesService} from './date-utilities.service'
 import {routes} from './app-routing.module'
+import {TestComponent} from './test/test.component'
+import {Test2Component} from './test2/test2.component'
+
 
 class RouterStub {
   navigateByUrl(url: string) {
@@ -17,7 +20,7 @@ class RouterStub {
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, DateComponent],
+      declarations: [AppComponent, DateComponent, TestComponent, Test2Component],
       providers : [DateUtilitiesService,
         {provide: Router, useClass: RouterStub}
       ],
