@@ -1,11 +1,32 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DateComponent } from './date/date.component';
+import { RouterModule, Router } from '@angular/router';
+import {MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms'
+import {DateUtilitiesService} from './date-utilities.service'
+
+class RouterStub {
+  navigateByUrl(url: string) {
+    return url;
+  }
+}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      declarations: [AppComponent, DateComponent],
+      providers : [DateUtilitiesService,
+        {provide: Router, useClass: RouterStub}
       ],
+      imports: [BrowserAnimationsModule, 
+        MatInputModule, 
+        MatFormFieldModule, 
+        FormsModule, 
+        MatDatepickerModule,
+        MatNativeDateModule,
+        RouterModule]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
