@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+import { StandingsComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
 import { MlbRepoService} from './mlb-repo.service'
 import { DateComponent} from './date/date.component'
@@ -20,7 +20,7 @@ import { FilterPipe} from './filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
+    StandingsComponent,
     Test2Component,
     DateComponent,
     FilterPipe

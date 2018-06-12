@@ -35,18 +35,18 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
   `,
   styleUrls:['../app.component.css']
 })
-export class TestComponent implements OnInit {
+export class StandingsComponent implements OnInit {
   public standings = [];
   private param1;
   private param2;
 
 
   constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { 
-     console.log("testComponent: Constructor");
+     console.log("StandingsComponent: Constructor");
   }
 
   ngOnInit() {
-    console.log("testComponent: ngOnInit");
+    console.log("StandingsComponent: ngOnInit");
     this.standings = this._MlbRepoService.getStandings();
     console.log((this.route.snapshot.paramMap.get('id')));
     console.log((this.route.snapshot.paramMap.get('date')));
