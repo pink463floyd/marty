@@ -31,4 +31,18 @@ export class DateUtilitiesService {
     console.log(date.getDate());
     return dateString;
   }
+
+  public getPrevDayString(inputDate :Date) : String {
+
+    let outputDate: Date;
+    let returnDate: String;
+    outputDate = new Date();
+    inputDate.setDate(inputDate.getDate() -1);
+    returnDate = inputDate.getFullYear() + "-";
+    returnDate += inputDate.getMonth() + "-";
+    returnDate += inputDate.getDate().toString();
+    //return "2011-10-29"
+    return returnDate;
+  }
+
 }

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterPipe} from '../filter.pipe';
 
-import { StandingsComponent } from './test.component';
+import { StandingsComponent } from './standings.component';
 import {MlbRepoService} from '../mlb-repo.service';
 import {RouterTestingModule} from '@angular/router/testing'
 
