@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { StandingsComponent } from './test/test.component';
+import {StandingsComponent} from './standings/standings.component';
 import { Test2Component } from './test2/test2.component';
 import { MlbRepoService} from './mlb-repo.service'
 import { DateComponent} from './date/date.component'
