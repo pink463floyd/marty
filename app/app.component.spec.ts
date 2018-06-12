@@ -6,7 +6,7 @@ import {MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateMo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
 import {DateUtilitiesService} from './date-utilities.service'
-//import {routes} from './app-routing.module'
+import {routes} from './app-routing.module'
 
 class RouterStub {
   navigateByUrl(url: string) {
@@ -28,7 +28,7 @@ describe('AppComponent', () => {
         MatDatepickerModule,
         MatNativeDateModule,
         RouterModule,
-     /* RouterModule.forRoot(routes) */]
+     RouterModule.forRoot(routes)]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
