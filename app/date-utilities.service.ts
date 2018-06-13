@@ -6,20 +6,17 @@ export class DateUtilitiesService {
 
   constructor() { }
 
-  public getYesterdayObject() {
-    let date= new Date();
-    date.setDate(date.getDate()-1);
-    return date;
+  public getPrevDayObject(inDate: Date) : Date {
+    let myDate = new Date(inDate);
+    let dateOffset = (24*60*60*1000) * 1; //1 days
+    myDate.setTime(myDate.getTime() - dateOffset);
+    return myDate;
   }
   
   public dateObject2String(date: Date) : string {
     let dateString = date.getFullYear() + "-";
     dateString += date.getMonth()+1 + "-";
     dateString += date.getDate();
-    console.log(date);
-    console.log(date.getFullYear());
-    console.log(date.getMonth()+1);
-    console.log(date.getDate());
     return dateString;
   }
 

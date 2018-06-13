@@ -62,4 +62,24 @@ describe('DateUtilitiesService', () => {
       expect(ret).toEqual("2020-2-29");    
     }
   });
+
+  it('should return yesterdays date object from todays date NOTE: this needs to be refactored every day :-(', () => {
+    let ret: Date;
+    ret = dateUtil.getPrevDayObject(new Date());
+    console.log(ret);
+    expect(ret.getDate()).toEqual(12);
+    expect(ret.getFullYear()).toEqual(2018);
+    expect(ret.getMonth()).toEqual(5);
+ });
+
+ it('should return string representing date mm/dd/xxxx', () => {
+  testDate = new Date("December 29, 2020");
+  ret = dateUtil.dateObject2String(testDate);
+  expect(ret).toEqual("2020-12-29");
+});
+it('should return string representing date m/d/xxxx', () => {
+  testDate = new Date("January 1, 2020");
+  ret = dateUtil.dateObject2String(testDate);
+  expect(ret).toEqual("2020-1-1");
+});
 });
