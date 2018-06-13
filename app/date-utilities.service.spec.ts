@@ -54,29 +54,25 @@ describe('DateUtilitiesService', () => {
 
     ret = dateUtil.getPrevDayString(testDate);
     expect(ret).toEqual("2020-2-29");
-    tests()
   });
 
+  it('should return yesterdays date from leap year 2020-03-01 for all 24 hours of the day', () => {
+    testDate = new Date('March 1, 2020 03:24:00');
+
+    let str = "March 1, 2020 03:24:00";
+    for (let i=0;i<24;i++) {
+      let tmpStr = "March 1, 2020 " + i.toString() + ":00:00" 
+      console.log(tmpStr);
+      tests(tmpStr);
+    }
+  });
 });
 
-function tests() {
-  console.log("tests!!!!!!")
-  let str = "March 1, 2020 03:24:00";
-  console.log("tests!!!!!!")
-  for (let i=0;i<24;i++) {
-    let tmpStr = str.substring(0, 14) + 'h' + str.substring(14);
-    tmpStr = "March 1, 2020 " + i.toString() + ":00:00" 
-    console.log(tmpStr);
-    foo(tmpStr);
-  }
-}
 
-function foo(dateStr) {
+function tests(dateStr) {
   let testDate = new Date(dateStr);
   let dateUtil = new DateUtilitiesService();
   let ret = dateUtil.getPrevDayString(testDate);
   expect(ret).toEqual("2020-2-29");
-
-
 }
 
