@@ -8,10 +8,17 @@ export class DateUtilitiesService {
 
   public getYesterdayString() {
     let tmpDate = new Date();
+    console.log(tmpDate);
+    console.log(tmpDate.getDate());
     tmpDate.setDate(tmpDate.getDate()-1);
+    console.log(tmpDate);
+    console.log("foo");
     let returnDate = tmpDate.getFullYear() + "-";
+    console.log(returnDate);
     returnDate += tmpDate.getMonth()+1 + "-";
+    console.log(returnDate);
     returnDate += tmpDate.getDate();
+    console.log(returnDate);
     return returnDate;
   }
 
@@ -32,17 +39,35 @@ export class DateUtilitiesService {
     return dateString;
   }
 
-  public getPrevDayString(inputDate :Date) : String {
+  public getPrevDayString(inDate :Date) : String {
+    let myDate = new Date(inDate);
+    console.log(myDate);
+    console.log("bar");
+    let dateOffset = (24*60*60*1000) * 1; //1 days
+    //let myDate = new Date();
+    myDate.setTime(myDate.getTime() - dateOffset);
 
-    let outputDate: Date;
     let returnDate: String;
-    outputDate = new Date();
-    inputDate.setDate(inputDate.getDate() -1);
+    returnDate = myDate.getFullYear() + "-";
+    returnDate += myDate.getMonth()+1 + "-";
+    returnDate += myDate.getDate().toString(); 
+    return returnDate;
+
+
+    //return myDate.toString();
+    
+    /*let tmpDate: Date;
+    console.log("scott in");
+    console.log(inputDate);
+    inputDate.setDate(inputDate.toString() -1);
+    console.log(inputDate);
+    //console.log(tmpDate)
+    console.log("scott out");
     returnDate = inputDate.getFullYear() + "-";
     returnDate += inputDate.getMonth() + "-";
-    returnDate += inputDate.getDate().toString();
+    returnDate += inputDate.getDate().toString(); */
     //return "2011-10-29"
-    return returnDate;
+    //return returnDate;
   }
 
 }
