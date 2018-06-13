@@ -13,7 +13,7 @@ export class DateUtilitiesService {
     return myDate;
   }
   
-  public dateObject2String(date: Date) : string {
+  public dateObject2String(date: Date) : String {
     let dateString = date.getFullYear() + "-";
     dateString += date.getMonth()+1 + "-";
     dateString += date.getDate();
