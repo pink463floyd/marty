@@ -19,7 +19,7 @@ describe('DateUtilitiesService', () => {
 
   it('should return yesterdays date from todays date NOTE: this needs to be refactored every day :-(', () => {
      let ret: String;
-     ret = dateUtil.getYesterdayString();
+     ret = dateUtil.getPrevDayString(new Date());
      console.log(ret);
      expect(ret).toEqual("2018-6-12");
   });
