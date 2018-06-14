@@ -21,8 +21,17 @@ describe('DateUtilitiesService', () => {
      let ret: String;
      ret = dateUtil.getPrevDayString(new Date());
      console.log(ret);
-     expect(ret).toEqual("2018-6-12");
+     expect(ret).toEqual("2018-6-13");
   });
+
+  it('should return yesterdays date object from todays date NOTE: this needs to be refactored every day :-(', () => {
+    let ret: Date;
+    ret = dateUtil.getPrevDayObject(new Date());
+    console.log(ret);
+    expect(ret.getDate()).toEqual(13);
+    expect(ret.getFullYear()).toEqual(2018);
+    expect(ret.getMonth()).toEqual(5);
+ });
 
   it('should return yesterdays date from future 2019-01-01', () => {
     testDate = new Date("January 1, 2019");
@@ -63,14 +72,7 @@ describe('DateUtilitiesService', () => {
     }
   });
 
-  it('should return yesterdays date object from todays date NOTE: this needs to be refactored every day :-(', () => {
-    let ret: Date;
-    ret = dateUtil.getPrevDayObject(new Date());
-    console.log(ret);
-    expect(ret.getDate()).toEqual(12);
-    expect(ret.getFullYear()).toEqual(2018);
-    expect(ret.getMonth()).toEqual(5);
- });
+
 
  it('should return string representing date mm/dd/xxxx', () => {
   testDate = new Date("December 29, 2020");
