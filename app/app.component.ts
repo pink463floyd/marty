@@ -24,6 +24,7 @@ export class AppComponent {
   ngOnInit() {
     console.log("App Component: ngOnInit -- About to Navigate to /subscriptions" + this.dateFilterString)
     this.router.navigate(["/subscriptions", this.currentTeam, this.dateFilterString])
+    this.title = "app works!"
   }
 
   divisions = [
