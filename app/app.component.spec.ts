@@ -104,6 +104,12 @@ describe('Minimal AppComponent (with beforeEach)', () => {
   it('should create', () => {
     expect(component).toBeDefined();
   });
+
+  it('should contain "Banner"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    expect(bannerElement.textContent).toContain('Banner');
+  });
+  
 });
 
 
