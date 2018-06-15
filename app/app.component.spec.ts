@@ -60,17 +60,40 @@ describe('Minimal AppComponent (with beforeEach)', () => {
   });
 
   
-  it('no title in the DOM after createComponent()', () => {
+  it('title in the DOM after createComponent()', () => {
     expect(component.title).toEqual('app');
   });
 
-  /*
-  it('no title in the DOM after createComponent()', () => {
+  
+  it('title in the DOM after detectChanges() FIX ME -- lots of messy console output', () => {
     fixture.detectChanges();
     expect(component.title).toEqual('app works!');
   });
-*/
+
 });
 
+//Experiment to fix the issue about the 'navigate' statement in ngInit being called before router is set up
+//Did not work though :-(  
+  // See https://stackoverflow.com/questions/41083089/unhandled-promise-rejection-cannot-match-any-routes
+  //6/15/2018 -- Scott FIX ME 
+/** Add TestBed providers, compile, and create DashboardComponent */
+//function compileAndCreate() {
+  //beforeEach(async(() => {
+    //const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    //const heroServiceSpy = jasmine.createSpyObj('HeroService', ['getHeroes']);
 
+    //TestBed.configureTestingModule({
+     // providers: [
+        //{ provide: HeroService, useValue: heroServiceSpy },
+       // { provide: Router,      useValue: routerSpy }
+      //]
+    //})
+    //.compileComponents().then(() => {
+      //fixture = TestBed.createComponent(AppComponent);
+      //component = fixture.componentInstance;
 
+      // getHeroes spy returns observable of test heroes
+      //heroServiceSpy.getHeroes.and.returnValue(asyncData(getTestHeroes()));
+    //});
+  //}));
+//}
