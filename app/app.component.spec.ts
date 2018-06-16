@@ -79,13 +79,39 @@ describe('Minimal AppComponent (with beforeEach)', () => {
   });
   */
 
-  it('Validate that "advert2" box contains title "$$$ B"', () => {
+  it('Validate that "banner" id contains title "Banner"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('#banner');
+    expect(h2.textContent).toContain('Banner');
+  });
+
+  //FIX ME -- Is this possible
+  /*
+  it('Validate date-picker is in banner', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('#banner.date-picker');
+    console.log(h2)
+    console.log("scott")
+    expect(h2.textContent).toContain('date-picker');
+  });
+  */
+  it('Validate that "advert1" class contains title "$$$ A"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('.advert1');
+    expect(h2.textContent).toContain('$$$ A');
+  });
+
+  it('Validate that "advert2" class contains title "$$$ B"', () => {
     const bannerElement: HTMLElement = fixture.nativeElement;
     const h2 = bannerElement.querySelector('.advert2');
     expect(h2.textContent).toContain('$$$ B');
   });
 
-
+  it('Validate that "footer" id contains title "FOOTER"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('#footer');
+    expect(h2.textContent).toContain('FOOTER');
+  });
 });
 
 //Experiment to fix the issue about the 'navigate' statement in ngInit being called before router is set up
