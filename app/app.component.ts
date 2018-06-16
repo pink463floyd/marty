@@ -17,8 +17,11 @@ export class AppComponent {
   constructor(private router: Router, private dateUtil: DateUtilitiesService) {
     console.log("App Component: Constructor")
     this.title = 'app';
-    this.currentTeam = this.divisions[0].menu,this.dateFilterString;
+    this.currentTeam = this.divisions[0].menu; 
     this.dateFilterString = this.dateUtil.getPrevDayString(new Date());
+    console.log("SCOTTY")
+    console.log(this.currentTeam)
+    console.log(this.dateFilterString)
   }
 
   ngOnInit() {
