@@ -19,9 +19,6 @@ export class AppComponent {
     this.title = 'app';
     this.currentTeam = this.divisions[0].menu; 
     this.dateFilterString = this.dateUtil.getPrevDayString(new Date());
-    console.log("SCOTTY")
-    console.log(this.currentTeam)
-    console.log(this.dateFilterString)
   }
 
   ngOnInit() {
