@@ -70,14 +70,15 @@ describe('Minimal AppComponent (with beforeEach)', () => {
     expect(component.title).toEqual('app works!');
   });
 
-  /*
-   FIX ME
-  it('Set title in test after detectChanges() FIX ME -- lots of messy console output', () => {
-    component.title = "Scott";
-    fixture.detectChanges();
-    expect(component.title).toEqual('Scott');
+  it('Verify that default team is AL-East', () => {
+    expect(component.currentTeam).toEqual('AL-East');
   });
-  */
+
+  it('Verify that default date is "yesterday"', () => {
+    let dateUtil = new DateUtilitiesService();
+    expect(component.dateFilterString).toEqual(dateUtil.getPrevDayString(new Date()));
+  });
+
 
   it('Validate that "banner" id contains title "Banner"', () => {
     const bannerElement: HTMLElement = fixture.nativeElement;
@@ -85,16 +86,6 @@ describe('Minimal AppComponent (with beforeEach)', () => {
     expect(h2.textContent).toContain('Banner');
   });
 
-  //FIX ME -- Is this possible
-  /*
-  it('Validate date-picker is in banner', () => {
-    const bannerElement: HTMLElement = fixture.nativeElement;
-    const h2 = bannerElement.querySelector('#banner.date-picker');
-    console.log(h2)
-    console.log("scott")
-    expect(h2.textContent).toContain('date-picker');
-  });
-  */
   it('Validate that "advert1" class contains title "$$$ A"', () => {
     const bannerElement: HTMLElement = fixture.nativeElement;
     const h2 = bannerElement.querySelector('.advert1');
@@ -113,6 +104,18 @@ describe('Minimal AppComponent (with beforeEach)', () => {
     expect(h2.textContent).toContain('FOOTER');
   });
 });
+
+  //FIX ME -- Is this possible
+  /*
+  it('Validate date-picker is in banner', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('#banner.date-picker');
+    console.log(h2)
+    console.log("scott")
+    expect(h2.textContent).toContain('date-picker');
+  });
+  */
+
 
 //Experiment to fix the issue about the 'navigate' statement in ngInit being called before router is set up
 //Did not work though :-(  
@@ -139,3 +142,12 @@ describe('Minimal AppComponent (with beforeEach)', () => {
     //});
   //}));
 //}
+
+  /*
+   FIX ME
+  it('Set title in test after detectChanges() FIX ME -- lots of messy console output', () => {
+    component.title = "Scott";
+    fixture.detectChanges();
+    expect(component.title).toEqual('Scott');
+  });
+  */
