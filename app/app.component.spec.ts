@@ -70,6 +70,22 @@ describe('Minimal AppComponent (with beforeEach)', () => {
     expect(component.title).toEqual('app works!');
   });
 
+  /*
+   FIX ME
+  it('Set title in test after detectChanges() FIX ME -- lots of messy console output', () => {
+    component.title = "Scott";
+    fixture.detectChanges();
+    expect(component.title).toEqual('Scott');
+  });
+  */
+
+  it('Validate that "advert2" box contains title "$$$ B"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const h2 = bannerElement.querySelector('.advert2');
+    expect(h2.textContent).toContain('$$$ B');
+  });
+
+
 });
 
 //Experiment to fix the issue about the 'navigate' statement in ngInit being called before router is set up
