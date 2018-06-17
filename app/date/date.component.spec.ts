@@ -5,6 +5,7 @@ import {DateUtilitiesService} from '../date-utilities.service'
 import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
+//FIX ME
 //import {
   //ActivatedRoute, ActivatedRouteStub, asyncData, click, newEvent
 //} from '../../testing';
@@ -52,7 +53,7 @@ describe('DateComponent', () => {
 
     nameInput.value = 'Thur Jun 14 2018 12:55:44 GMT-0700 (Pacific Daylight Time';
 
-    //nameInput.dispatchEvent(newEvent('input'));
+    //nameInput.dispatchEvent(newEvent('input')); FIX ME
 
     fixture.detectChanges();
     console.log("BOH")
@@ -117,11 +118,13 @@ describe('DateComponent when tested directly', () => {
     fixture.detectChanges();
   });
 
-  it('should raise selected event when clicked (triggerEventHandler)', () => {
+  it('should raise selected event when clicked (triggerEventHandler) -- make sure runs with $ ng test -sm=false -- else you get XMLHttpRequest error', () => {
     let myDate : Date = new Date("January 1, 2019");
-    heroDe.triggerEventHandler('dateChange', myDate);
-    console.log("TRIGGER!!!")
-    //expect(selectedHero).toBe(expectedHero);
+    let obj = {"value" : myDate};
+
+    spyOn(comp.childEvent, 'emit');
+    heroDe.triggerEventHandler('dateChange', obj);
+    expect(comp.childEvent.emit).toHaveBeenCalledWith('2019-1-1');
   });
 /*
     it('should raise selected event when clicked (element.click)', () => {
