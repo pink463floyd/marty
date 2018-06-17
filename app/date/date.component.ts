@@ -7,7 +7,7 @@ import {ViewEncapsulation} from '@angular/core'
   template: `
     <p>
        <mat-form-field>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
+          <input class="myDatePicker" matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
       </mat-form-field> 
