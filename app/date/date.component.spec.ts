@@ -5,10 +5,11 @@ import {DateUtilitiesService} from '../date-utilities.service'
 import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
-//FIX ME
-//import {
+
+import {
   //ActivatedRoute, ActivatedRouteStub, asyncData, click, newEvent
-//} from '../../testing';
+  newEvent
+} from '../../testing';
 import { By }                 from '@angular/platform-browser';
 import { FilterPipe} from '../filter.pipe';
 
@@ -53,7 +54,7 @@ describe('DateComponent', () => {
 
     nameInput.value = 'Thur Jun 14 2018 12:55:44 GMT-0700 (Pacific Daylight Time';
 
-    //nameInput.dispatchEvent(newEvent('input')); FIX ME
+    nameInput.dispatchEvent(newEvent('input')); 
 
     fixture.detectChanges();
     console.log("BOH")
