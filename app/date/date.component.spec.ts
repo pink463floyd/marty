@@ -6,67 +6,12 @@ import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
 
-import {
-  //ActivatedRoute, ActivatedRouteStub, asyncData, click, newEvent
-  newEvent
-} from '../../testing';
+import {newEvent} from '../../testing';
 import { By }                 from '@angular/platform-browser';
 import { FilterPipe} from '../filter.pipe';
 
+describe('DateComponent when tested directly', () => {
 
-describe('DateComponent', () => {
-  let component: DateComponent;
-  let fixture: ComponentFixture<DateComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DateComponent ],
-      imports: [BrowserAnimationsModule, 
-                MatInputModule, 
-                MatFormFieldModule, 
-                FormsModule, 
-                MatDatepickerModule,
-                MatNativeDateModule],
-      providers: [DateUtilitiesService]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('query selector', () => {
-    const hostElement = fixture.nativeElement;
-    const nameInput: HTMLInputElement = hostElement.querySelector('input')
-    console.log("DOH")
-    console.log(nameInput);
-    console.log("DOH")
-    console.log(nameInput.value)
-    console.log("DOH")
-    console.log(component.myDateObject)
-
-    nameInput.value = 'Thur Jun 14 2018 12:55:44 GMT-0700 (Pacific Daylight Time';
-
-    nameInput.dispatchEvent(newEvent('input')); 
-
-    fixture.detectChanges();
-    console.log("BOH")
-    console.log(nameInput);
-    console.log("BOH")
-    console.log(nameInput.value)
-    console.log("BOH")
-    console.log(component.myDateObject)
-
-  })
-
-  it('Validate component is sending correctly constructed events', () => {
     //https://angular.io/guide/testing#triggereventhandler
     //See dashboard-hero-component.spec.ts
     //See dashboard/dashboard.component.spec.ts
@@ -74,10 +19,6 @@ describe('DateComponent', () => {
     //We will want to trigger a 'dateChange' event
     //One test will simply send a pre defined date object
     //Another test will pick a date from the picker and makes sure that it is sent
-  })
-});
-
-describe('DateComponent when tested directly', () => {
 
   let comp: DateComponent;
   let fixture: ComponentFixture<DateComponent>;
@@ -94,7 +35,6 @@ describe('DateComponent when tested directly', () => {
         MatInputModule, 
         MatFormFieldModule, 
         MatNativeDateModule, 
-        //MatMomentDateModule,
         FormsModule, 
         MatDatepickerModule]
   })
@@ -109,14 +49,12 @@ describe('DateComponent when tested directly', () => {
     heroDe  = fixture.debugElement.query(By.css('.myDatePicker'));
     heroEl = heroDe.nativeElement;
 
-    // mock the hero supplied by the parent component
-    //expectedHero = { id: 42, name: 'Test Name' };
-
-    // simulate the parent setting the input property with that hero
-    //comp.hero = expectedHero;
-
     // trigger initial data binding
     fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(comp).toBeTruthy();
   });
 
   it('should raise selected event when clicked (triggerEventHandler) -- make sure runs with $ ng test -sm=false -- else you get XMLHttpRequest error', () => {
@@ -127,6 +65,40 @@ describe('DateComponent when tested directly', () => {
     heroDe.triggerEventHandler('dateChange', obj);
     expect(comp.childEvent.emit).toHaveBeenCalledWith('2019-1-1');
   });
+
+  it('query selector 222', () => {
+    //FIX ME -- why is this line returning NULL????
+    //const nameInput: HTMLInputElement = heroEl.querySelector('input')
+    //Why do these lines below work? FIX ME
+    //HAH HAH HAH -- Because the lines below are using a native element
+    //and the ones above are using a debug element
+    const hostElement = fixture.nativeElement;
+    const nameInput: HTMLInputElement = hostElement.querySelector('input')
+    console.log("FOH")
+    console.log(heroEl)
+    console.log("BOH")
+    //console.log(hostElement)
+    console.log("ROH")
+    console.log(nameInput);
+    console.log("COH")
+    console.log(nameInput.value)
+    console.log("ROH")
+    console.log(comp.myDateObject)
+
+    nameInput.value = 'Thur Jun 14 2018 12:55:44 GMT-0700 (Pacific Daylight Time';
+
+    nameInput.dispatchEvent(newEvent('input')); 
+
+    fixture.detectChanges();
+    console.log("BOH")
+    console.log(nameInput);
+    console.log("BOH")
+    console.log(nameInput.value)
+    console.log("BOH")
+    console.log(comp.myDateObject)
+
+  })
+  
 /*
     it('should raise selected event when clicked (element.click)', () => {
       let selectedHero: Hero;
