@@ -66,36 +66,21 @@ describe('DateComponent when tested directly', () => {
     expect(comp.childEvent.emit).toHaveBeenCalledWith('2019-1-1');
   });
 
-  it('query selector 222', () => {
-    //FIX ME -- why is this line returning NULL????
-    //const nameInput: HTMLInputElement = heroEl.querySelector('input')
-    //Why do these lines below work? FIX ME
-    //HAH HAH HAH -- Because the lines below are using a native element
-    //and the ones above are using a debug element
+  it('Change date and validate it is contained in triggered event', () => {
     const hostElement = fixture.nativeElement;
     const nameInput: HTMLInputElement = hostElement.querySelector('input')
-    console.log("FOH")
-    console.log(heroEl)
-    console.log("BOH")
-    //console.log(hostElement)
-    console.log("ROH")
-    console.log(nameInput);
-    console.log("COH")
-    console.log(nameInput.value)
-    console.log("ROH")
-    console.log(comp.myDateObject)
 
-    nameInput.value = 'Thur Jun 14 2018 12:55:44 GMT-0700 (Pacific Daylight Time';
+    nameInput.value = 'Tue Jan 1 2019 12:55:44 GMT-0700 (Pacific Daylight Time';
 
     nameInput.dispatchEvent(newEvent('input')); 
 
     fixture.detectChanges();
-    console.log("BOH")
-    console.log(nameInput);
-    console.log("BOH")
-    console.log(nameInput.value)
-    console.log("BOH")
-    console.log(comp.myDateObject)
+    let myDate : Date = new Date(nameInput.value);
+  let obj = {"value" : comp.myDateObject/*myDate*/};
+
+    spyOn(comp.childEvent, 'emit');
+    heroDe.triggerEventHandler('dateChange', obj);
+    expect(comp.childEvent.emit).toHaveBeenCalledWith('2019-1-1');
 
   })
   

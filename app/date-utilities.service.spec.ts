@@ -21,14 +21,14 @@ describe('DateUtilitiesService', () => {
      let ret: String;
      ret = dateUtil.getPrevDayString(new Date());
      console.log(ret);
-     expect(ret).toEqual("2018-6-15");
+     expect(ret).toEqual("2018-6-19");
   });
 
   it('should return yesterdays date object from todays date NOTE: this needs to be refactored every day :-(', () => {
     let ret: Date;
     ret = dateUtil.getPrevDayObject(new Date());
     console.log(ret);
-    expect(ret.getDate()).toEqual(15);
+    expect(ret.getDate()).toEqual(19);
     expect(ret.getFullYear()).toEqual(2018);
     expect(ret.getMonth()).toEqual(5);
  });
